@@ -15,7 +15,7 @@ class Prime
       next unless prim(@num)
       @arr << @num
     end
-    pos.zero? ? ArgumentError.new('pos is 0', 'index', 1, 1) : @arr[pos - 1]
+    pos.zero? ? ArgumentError.new('pos is 0 not exist', 'nth', 1, 1) : @arr[pos - 1]
   end
 
   def self.prim(num)

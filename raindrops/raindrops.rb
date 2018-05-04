@@ -1,26 +1,14 @@
 # sffsfdsds
 class Raindrops
-  @num = 0
+  @equ = { 3 => 'Pling', 5 => 'Plang', 7 => 'Plong' }
+  @equ.default = ''
 
   def self.convert(num)
-    @num = num
     text = ''
-    multiplos.each do |i|
-      case i
-      when 3 then text += 'Pling'
-      when 5 then text += 'Plang'
-      when 7 then text += 'Plong'
-      end
+    num.times do |i|
+      text += @equ[(i + 1)] if num.modulo((i + 1)).zero?
     end
     text == '' ? num.to_s : text
-  end
-
-  def self.multiplos
-    arr = []
-    @num.times do |i|
-      arr << (i + 1) if @num.modulo((i + 1)).zero?
-    end
-    arr
   end
 end
 

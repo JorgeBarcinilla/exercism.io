@@ -1,12 +1,10 @@
 # ffgdfgd
 class Complement
   def self.of_dna(cad)
-    cad = cad.split(//)
     h = { 'G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U' }
-    h.default = ''
     txt = ''
-    cad.each do |ltr|
-      return txt = '' if h[ltr] == ''
+    cad.each_char do |ltr|
+      return txt = '' if h[ltr] == nil
       txt += h[ltr]
     end
     txt
